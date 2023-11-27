@@ -10,6 +10,8 @@ import {
 import { auth } from "../utils/firabase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/redux/userSlice";
+import { backgroundImage_URL } from "../utils/constants";
+import { profileImage_URL } from "../utils/constants";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -42,8 +44,7 @@ const Login = () => {
 
           updateProfile(user, {
             displayName: myName.current.value,
-            photoURL:
-              "https://avatars.githubusercontent.com/u/143312251?s=400&u=db3caae5118e2648fee0be99c9f12e76ff56adbd&v=4",
+            photoURL: profileImage_URL,
           })
             .then(() => {
               // Profile updated!
@@ -87,10 +88,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/a09bb938-2d90-42ae-986e-5a3e4abf9e77/8eb1e781-3494-4aa4-9405-268ca6473e4c/IN-en-20231113-popsignuptwoweeks-perspective_alpha_website_large.jpg"
-          alt="logo"
-        />
+        <img src={backgroundImage_URL} alt="logo" />
       </div>
 
       <form

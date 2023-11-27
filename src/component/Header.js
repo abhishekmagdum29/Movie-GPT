@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/redux/userSlice";
+import { LOGO_URL } from "../utils/constants";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName, photoURL } = user;
         dispatch(
@@ -40,21 +41,23 @@ const Header = () => {
         navigate("/");
       }
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // unSubscribe when component unmounts
+    return () => unSubscribe();
   }, []);
 
   return (
     <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10  flex justify-between items-center">
       <img
         className="w-56"
-        src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+        src={LOGO_URL}
         alt="img"
       />
 
       {user && (
         <div className="flex mr-6">
           <img
-            className="w-9 h-9 mr-2 rounded-full"
+            className="w-9 h-9 mr-2 "
             src={user?.photoURL}
             alt="img"
           />
