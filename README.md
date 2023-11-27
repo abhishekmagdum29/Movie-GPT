@@ -10,7 +10,13 @@
 - useRef hook
 - Firebase setup
 - Deploying app to production
-- Create Signup in Firebase
+- Create Signup user account
+- implement Sign up/in API
+- created Redux store with userSlice
+- implemented sign out 
+- update profile
+- Bugfix- sigend up user display name & profile image
+- Bugfix- if user isn't logged in redirect him to same page 
 
 # Features
 - Login / Sign up
