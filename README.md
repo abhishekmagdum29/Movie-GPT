@@ -21,6 +21,9 @@
 - Add hardcoded values to the constants file
 - register TMDB API & get access token 
 - get data from TMDB's now playing movie API
+- show movie title, oberview
+- display movie trailer in background
+- clean up the code with custom hook
 
 # Features
 - Login / Sign up
