@@ -3,10 +3,11 @@ import { BiSolidRightArrow } from "react-icons/bi";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 const VideoTitle = ({ title, overview }) => {
+  console.log(overview);
   return (
-    <div className=" absolute w-screen aspect-video pt-[12%] px-12 text-white bg-gradient-to-r from-black ">
-      <p className="text-4xl font-bold ">{title}</p>
-      <p className="w-1/4 py-6 text-lg font-semibold">{overview}</p>
+    <div className=" absolute w-screen aspect-video pt-[15%] px-12 text-white bg-gradient-to-r from-black ">
+      <p className="text-4xl font-bold w-56">{title}</p>
+      <p className="w-1/4 py-6 text-lg font-semibold">{overview.slice(0,262)}</p>
 
       <div className="flex">
         <button className="bg-white text-black w-[105px] px-2 py-2 rounded-md flex items-center justify-center hover:bg-opacity-80">

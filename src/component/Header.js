@@ -49,7 +49,7 @@ const Header = () => {
   return (
     <div className="absolute w-screen px-5 bg-gradient-to-b from-black z-10  flex justify-between items-center">
       <img
-        className="w-56 "
+        className="w-44 px-2 py-2 "
         src={LOGO_URL}
         alt="img"
       />
@@ -62,7 +62,7 @@ const Header = () => {
             alt="img"
           />
 
-          <button className="font-bold text-white" onClick={handleSignOut}>
+          <button className="font-bold text-white hover:text-gray-300" onClick={handleSignOut}>
             (Sign Out)
           </button>
         </div>

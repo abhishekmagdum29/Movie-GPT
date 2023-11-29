@@ -24,6 +24,8 @@
 - show movie title, oberview
 - display movie trailer in background
 - clean up the code with custom hook
+- updating secondary container
+- showing varous movie lists category wise
 
 # Features
 - Login / Sign up
