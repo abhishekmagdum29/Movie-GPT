@@ -12,10 +12,10 @@ const language = {
     search: "शोध ",
     searchPlaceholderValue: "तुम्हाला आज काय बघायला आवडेल?",
   },
-  span: {
-    search: "buscar",
-    searchPlaceholderValue: "¿Qué te gustaría ver hoy?",
-  },
+  // span: {
+  //   search: "buscar",
+  //   searchPlaceholderValue: "¿Qué te gustaría ver hoy?",
+  // },
 };
 
 export default language;
