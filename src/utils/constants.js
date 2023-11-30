@@ -7,15 +7,32 @@ export const LOGO_URL =
 export const profileImage_URL =
   "https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg";
 
+export const API_OPTIONS = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZDgzMGU5MmM1NjNlYTBmNTkxYzAzZDVlZWE3YTJlNCIsInN1YiI6IjY1NjQyZTViYjIzNGI5MDEzOTI4ODZkMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GXGYS-8fSBQ5CQtE7g1407zvHBGGBvA8W40HSBPn0xg",
+  },
+};
 
-  export const API_OPTIONS = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZDgzMGU5MmM1NjNlYTBmNTkxYzAzZDVlZWE3YTJlNCIsInN1YiI6IjY1NjQyZTViYjIzNGI5MDEzOTI4ODZkMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GXGYS-8fSBQ5CQtE7g1407zvHBGGBvA8W40HSBPn0xg'
-    }
-  };
-  
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500";
 
-
-  export const IMG_CDN_URL="https://image.tmdb.org/t/p/w500"
+export const SUPPORTED_LANGUAGE = [
+  {
+    identifier: "eng",
+    name: "English",
+  },
+  {
+    identifier: "hin",
+    name: "Hindi",
+  },
+  {
+    identifier: "mar",
+    name: "Marathi",
+  },
+  {
+    identifier: "span",
+    name: "Spanish",
+  },
+];

@@ -26,6 +26,9 @@
 - clean up the code with custom hook
 - updating secondary container
 - showing varous movie lists category wise
+- created GPT search button & GPT component
+- created GPT search bar
+- created language select menu
 
 # Features
 - Login / Sign up
