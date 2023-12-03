@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS } from "../constants";
 import { addPopulerMovies } from "../redux/moviesSlice";
 
 const usePopulerMovies = () => {
   const dispatch = useDispatch();
+  const populerMovies = useSelector((store) => store.movies.populerMovies);
 
   const getPopulerMovies = async () => {
     const response = await fetch(
@@ -17,8 +18,8 @@ const usePopulerMovies = () => {
   };
 
   useEffect(() => {
-    getPopulerMovies();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    !populerMovies && getPopulerMovies();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
 

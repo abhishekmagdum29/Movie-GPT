@@ -3,9 +3,9 @@ import { BiSolidRightArrow } from "react-icons/bi";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 const VideoTitle = ({ title, overview }) => {
-  console.log(overview);
+  
   return (
-    <div className=" absolute w-screen aspect-video pt-[15%] px-12 text-white bg-gradient-to-r from-black ">
+    <div className=" absolute w-screen aspect-video pt-[13%] px-12 text-white bg-gradient-to-r from-black ">
       <p className="text-4xl font-bold w-56">{title}</p>
       <p className="w-1/4 py-6 text-lg font-semibold">{overview.slice(0,262)}</p>
 

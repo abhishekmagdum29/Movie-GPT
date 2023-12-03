@@ -27,8 +27,10 @@
 - updating secondary container
 - showing varous movie lists category wise
 - created GPT search button & GPT component
-- created GPT search bar
-- created language select menu
+- created multi language support in GPT search page
+- created GPT search bar & movie suggestions coming through OPENAI API
+- solved the random API call issue through memoization
+- secure API key in .env file
 
 # Features
 - Login / Sign up

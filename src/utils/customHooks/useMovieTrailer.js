@@ -1,10 +1,11 @@
 import { API_OPTIONS } from "../constants";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addMovieTrailer } from "../redux/moviesSlice";
 
 const useMovieTrailer = (movieId) => {
   const dispatch = useDispatch();
+  const movieTrailer = useSelector((store) => store.movies.movieTrailer);
 
   // fetch movie trailer videos & update the redux store with it
   const getBackgroundMovieClip = async () => {
@@ -24,7 +25,7 @@ const useMovieTrailer = (movieId) => {
   };
 
   useEffect(() => {
-    getBackgroundMovieClip();
+    !movieTrailer && getBackgroundMovieClip();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 };
