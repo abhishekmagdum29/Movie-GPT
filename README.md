@@ -31,6 +31,7 @@
 - created GPT search bar & movie suggestions coming through OPENAI API
 - solved the random API call issue through memoization
 - secure API key in .env file
+- made website mobile responsive
 
 # Features
 - Login / Sign up

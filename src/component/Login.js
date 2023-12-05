@@ -74,6 +74,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           // Login
+          // eslint-disable-next-line no-unused-vars
           const user = userCredential.user;
         })
         .catch((error) => {
@@ -87,15 +88,19 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
-        <img src={backgroundImage_URL} alt="logo" />
+      <div className="absolute ">
+        <img
+          className="h-screen object-cover md:w-screen"
+          src={backgroundImage_URL}
+          alt="logo"
+        />
       </div>
 
       <form
-        className="absolute w-[28%] p-12 mx-auto my-32 right-0 left-0 bg-black text-white bg-opacity-80 rounded-xl"
+        className="absolute w-[90%] md:w-[28%] p-8 md:p-12 mx-auto my-24 md:my-32 right-0 left-0 bg-black text-white bg-opacity-80 rounded-xl"
         onSubmit={(e) => e.preventDefault()}
       >
-        <h1 className="font-bold text-3xl py-4">
+        <h1 className="font-bold text-2xl md:text-3xl py-4">
           {isSignIn ? "Sign In" : "Sign Up"}
         </h1>
 

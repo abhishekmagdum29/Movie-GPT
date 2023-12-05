@@ -60,11 +60,11 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-screen px-5 bg-gradient-to-b from-black z-10  flex justify-between items-center">
-      <img className="w-44 px-2 py-2 " src={LOGO_URL} alt="img" />
+    <div className="absolute w-screen px-5 bg-gradient-to-b from-black z-10   md:justify-between items-center flex flex-col md:flex-row ">
+      <img className="w-44 md:w-52 px-2 py-2 " src={LOGO_URL} alt="img" />
 
       {user && (
-        <div className="flex mr-8">
+        <div className=" flex mt-1 md:mt-0 md:mr-10">
           {showGptButton && (
             <select
               className="mr-6 px-2 py1 bg-gray-900 rounded-md text-white outline-none"
@@ -75,20 +75,23 @@ const Header = () => {
                   {lang.name}
                 </option>
               ))}
-              
             </select>
           )}
 
           <button
-            className="text-white mr-7 px-2 py-1 outline-none bg-purple-700 hover:bg-purple-600 rounded-md"
+            className="text-white  text-sm font-medium px-[6px] py-[5px]  md:mr-7 md:px-2 md:py-1 outline-none bg-purple-700 hover:bg-purple-600 rounded-md"
             onClick={handleGptSearch}
           >
             {showGptButton ? "Home" : "GPT Search"}
           </button>
-          <img className="w-9 h-9 mr-2 " src={user?.photoURL} alt="img" />
+          <img
+            className="hidden md:block w-9 h-9 mr-2 "
+            src={user?.photoURL}
+            alt="img"
+          />
 
           <button
-            className="font-semibold text-sm text-white hover:text-gray-300"
+            className="ml-32 md:ml-0 font-semibold text-sm text-white hover:text-gray-300"
             onClick={handleSignOut}
           >
             (Sign Out)
