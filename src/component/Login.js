@@ -10,7 +10,6 @@ import {
 import { auth } from "../utils/firabase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/redux/userSlice";
-import { backgroundImage_URL } from "../utils/constants";
 import { profileImage_URL } from "../utils/constants";
 
 const Login = () => {
@@ -86,18 +85,13 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className=" bg-[url('/assets/bg.jpg')] h-screen">
       <Header />
-      <div className="absolute ">
-        <img
-          className="h-screen object-cover md:w-screen"
-          src={backgroundImage_URL}
-          alt="logo"
-        />
-      </div>
+
+      <div className="bg-black h-full opacity-[0.5] "></div>
 
       <form
-        className="absolute w-[90%] md:w-[28%] p-8 md:p-12 mx-auto my-24 md:my-32 right-0 left-0 bg-black text-white bg-opacity-80 rounded-xl"
+        className="absolute top-1 w-[90%] md:w-[28%] p-8 md:p-12 mx-auto my-24 md:my-32 right-0 left-0 bg-black text-white bg-opacity-[0.65] rounded-xl"
         onSubmit={(e) => e.preventDefault()}
       >
         <h1 className="font-bold text-2xl md:text-3xl py-4">
@@ -126,7 +120,7 @@ const Login = () => {
         />
         <p className="text-red-600 font-medium">{errorMessage}</p>
         <button
-          className="p-4 my-6 bg-red-600 w-full rounded-md"
+          className="p-4 my-6 text-lg bg-red-600 w-full rounded-md"
           onClick={handleFormValidation}
         >
           {isSignIn ? "Sign in" : "Sign Up "}

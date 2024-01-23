@@ -5,6 +5,7 @@ import { addNowPlayingMovies } from "../redux/moviesSlice";
 
 const useNowPlayingMovies = () => {
   const dispatch = useDispatch();
+  
   const nowPlayingMovies = useSelector(
     (store) => store.movies.nowPlayingMovies
   );

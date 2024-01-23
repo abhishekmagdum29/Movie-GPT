@@ -17,7 +17,7 @@
 - update profile
 - Bugfix- sigend up user display name & profile image
 - Bugfix- if user isn't logged in redirect him to same page 
-- Unsubscribe to the onAuthStateChane function 
+- Unsubscribe to the onAuthStateChange function 
 - Add hardcoded values to the constants file
 - register TMDB API & get access token 
 - get data from TMDB's now playing movie API

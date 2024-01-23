@@ -8,6 +8,8 @@ const GptMovieSuggestions = () => {
 
   if (!gptMovieNames) return null;
 
+  console.log(gptMovieNames, tmdbMovies);
+
   return (
     <div className="p-4 mt-16 mx-4 bg-black text-white bg-opacity-80">
       <div>
