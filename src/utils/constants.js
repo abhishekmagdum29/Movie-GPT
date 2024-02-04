@@ -31,8 +31,4 @@ export const SUPPORTED_LANGUAGE = [
     identifier: "mar",
     name: "Marathi",
   },
-  // {
-  //   identifier: "span",
-  //   name: "Spanish",
-  // },
 ];

@@ -11,7 +11,7 @@ const VideoTitle = ({ title, overview }) => {
     <div className=" absolute w-screen aspect-video pt-[16%] md:pt-[13%] px-5 md:px-12 text-white bg-gradient-to-r from-black ">
       <p className="text-2xl md:text-4xl font-bold w-56">{title}</p>
       <p className="hidden md:block w-1/4 py-6 text-lg font-semibold">
-        {overview.slice(0, 262)}
+        {overview.slice(0, 239)}
       </p>
 
       <div className="flex mt-3 md:mt-0">

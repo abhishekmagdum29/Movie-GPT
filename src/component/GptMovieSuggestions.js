@@ -4,11 +4,10 @@ import MovieList from "./MovieList";
 
 const GptMovieSuggestions = () => {
   const gptStoreData = useSelector((store) => store.gpt);
+
   const { gptMovieNames, tmdbMovies } = gptStoreData;
 
   if (!gptMovieNames) return null;
-
-  console.log(gptMovieNames, tmdbMovies);
 
   return (
     <div className="p-4 mt-16 mx-4 bg-black text-white bg-opacity-80">

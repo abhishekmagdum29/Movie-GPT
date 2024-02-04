@@ -13,6 +13,7 @@ const GptSearch = () => {
           alt="img"
         />
       </div>
+
       <div>
         <GptSearchBar />
         <GptMovieSuggestions />

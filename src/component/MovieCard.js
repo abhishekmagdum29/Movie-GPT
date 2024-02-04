@@ -1,9 +1,9 @@
 import React from "react";
 import { IMG_CDN_URL } from "../utils/constants";
 
-const MovieCard = ({ posterPath }) => {
+const MovieCard = ({ posterPath, id }) => {
   if (!posterPath) return null;
-  
+
   return (
     <div className="w-32 px-1 mx-[5px] md:w-[212px] md:px-4 md:mx-0">
       <img
@@ -12,6 +12,8 @@ const MovieCard = ({ posterPath }) => {
         alt="posterImg"
       />
     </div>
+     
+
   );
 };
 

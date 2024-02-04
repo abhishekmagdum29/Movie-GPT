@@ -120,7 +120,7 @@ const Login = () => {
         />
         <p className="text-red-600 font-medium">{errorMessage}</p>
         <button
-          className="p-4 my-6 text-lg bg-red-600 w-full rounded-md"
+          className="p-4 my-6 text-lg bg-red-600 cursor-pointer w-full rounded-md transition delay-150 hover:bg-red-700 duration-200"
           onClick={handleFormValidation}
         >
           {isSignIn ? "Sign in" : "Sign Up "}

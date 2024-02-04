@@ -15,10 +15,10 @@ import language from "../utils/languageConstants";
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  
+
   const user = useSelector((store) => store.user);
   const showGptButton = useSelector((store) => store.gpt.showGptSearch);
-  const languageKey=useSelector((store)=>store.config.lang)
+  const languageKey = useSelector((store) => store.config.lang);
 
   const handleSignOut = () => {
     signOut(auth)
@@ -68,18 +68,16 @@ const Header = () => {
 
       {user && (
         <div className=" flex mt-1 md:mt-0 md:mr-10">
-          
-            <select
-              className="mr-6 px-2 py1 bg-gray-900 rounded-md text-white outline-none"
-              onChange={handleLanguageChange}
-            >
-              {SUPPORTED_LANGUAGE.map((lang) => (
-                <option key={lang.identifier} value={lang.identifier}>
-                  {lang.name}
-                </option>
-              ))}
-            </select>
-          
+          <select
+            className="mr-6 px-2 py1 bg-gray-900 rounded-md text-white outline-none"
+            onChange={handleLanguageChange}
+          >
+            {SUPPORTED_LANGUAGE.map((lang) => (
+              <option key={lang.identifier} value={lang.identifier}>
+                {lang.name}
+              </option>
+            ))}
+          </select>
 
           <button
             className="text-white  text-sm font-medium px-[6px] py-[5px]  md:mr-7 md:px-2 md:py-1 outline-none bg-purple-700 hover:bg-purple-600 rounded-md"
