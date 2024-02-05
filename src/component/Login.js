@@ -121,9 +121,9 @@ const Login = () => {
         {errorMessage ? (
           <p className="text-red-600 font-medium">{errorMessage}</p>
         ) : (
-          <p className="text-[#c1c0c0] font-semibold text-[13px] ml-2">
-            ( password must be of 8 characters. must include
-            uppercase,lowercase,special char & number )
+          <p className="text-[#a4a3a3] font-semibold text-[13px] ml-2">
+            ( password must be of 8 characters. Must include
+            uppercase, lowercase, special char & number )
           </p>
         )}
 
