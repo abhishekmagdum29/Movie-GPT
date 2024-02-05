@@ -91,7 +91,7 @@ const Login = () => {
       <div className="bg-black h-full opacity-[0.5] "></div>
 
       <form
-        className="absolute top-1 w-[90%] md:w-[28%] p-8 md:p-12 mx-auto my-24 md:my-32 right-0 left-0 bg-black text-white bg-opacity-[0.65] rounded-xl"
+        className="absolute -top-[40px] w-[90%] md:w-[28%] p-8 md:p-12 mx-auto my-24 md:my-32 right-0 left-0 bg-black text-white bg-opacity-[0.65] rounded-xl"
         onSubmit={(e) => e.preventDefault()}
       >
         <h1 className="font-bold text-2xl md:text-3xl py-4">
@@ -118,7 +118,15 @@ const Login = () => {
           placeholder="password"
           className="p-4 my-4 w-full bg-[#333333] outline-none rounded-md"
         />
-        <p className="text-red-600 font-medium">{errorMessage}</p>
+        {errorMessage ? (
+          <p className="text-red-600 font-medium">{errorMessage}</p>
+        ) : (
+          <p className="text-[#c1c0c0] font-semibold text-[13px] ml-2">
+            ( password must be of 8 characters. must include
+            uppercase,lowercase,special char & number )
+          </p>
+        )}
+
         <button
           className="p-4 my-6 text-lg bg-red-600 cursor-pointer w-full rounded-md transition delay-150 hover:bg-red-700 duration-200"
           onClick={handleFormValidation}
