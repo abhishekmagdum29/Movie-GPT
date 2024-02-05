@@ -94,7 +94,9 @@ const MovieInfoCard = ({ infoData }) => {
           </p>
           <div className="flex md:justify-between  items-center w-[115px] mt-2 md:mt-5">
             <FaStar className="text-base mr-2 md:text-4xl text-yellow-500" />
-            <p className="text-base md:text-3xl">{Math.round(vote_average)}/10</p>
+            <p className="text-base md:text-3xl">
+              {Math.round(vote_average)}/10
+            </p>
           </div>
         </div>
         {showTrailer && <MovieTrailer />}
