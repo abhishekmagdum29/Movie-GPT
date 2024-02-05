@@ -43,8 +43,8 @@ const MovieInfoCard = ({ infoData }) => {
 
   return (
     <>
-      <div className="absolute  top-[13%]  bg-gray-950   text-white w-[100%] py-6 flex">
-        <div className="w-[300px] h-[450px] ml-[7%] ">
+      <div className="absolute  top-[13%]  bg-gray-950   text-white  md:w-[100%] py-6 flex">
+        <div className="md:w-[300px] md:h-[450px] ml-2 md:ml-[7%] w-[150px] h-[250px] ">
           <img
             className="object-cover rounded-md"
             src={IMG_CDN_URL + poster_path}
@@ -53,46 +53,51 @@ const MovieInfoCard = ({ infoData }) => {
         </div>
 
         <div className=" ml-[4%]  w-[65%]">
-          <p className="text-4xl font-semibold tracking-wider">
+          <p className="text-xl md:text-4xl font-semibold tracking-wider">
             {original_title}
           </p>
           <div className="flex items-center  mt-3">
-            <p className="text-lg mr-2 text-gray-300">{release_date}</p>
+            <p className="text-[9px] md:text-lg mr-2 text-gray-300">
+              {release_date}
+            </p>
             {genres.map((genere) => (
               <p
-                className="mx-3 font-medium text-lg text-gray-300"
+                className="md:mx-3 mx-1 font-medium text-xs md:text-lg text-gray-300 underline decoration-1"
                 key={genere.name}
               >
-                {genere.name} •
+                {genere.name}
               </p>
             ))}
           </div>
 
           <div className="mt-5 flex items-center">
-            <p className="text-xl text-gray-300  italic tracking-wider font-semibold">
+            <p className="text-xs mr-4 md:text-xl text-gray-300  md:italic tracking-wider font-semibold">
               {tagline.slice(0, 80)}
             </p>
 
             <div
-              className="ml-10 flex items-center cursor-pointer  transition hover:text-blue-400 duration-300"
+              className=" md:ml-10 flex items-center cursor-pointer  transition hover:text-blue-400 duration-300"
               onClick={() => playMovieTrailer(id)}
             >
-              <FaPlay className="text-2xl" />
-              <p className="  text-xl text-gray-300 ml-2  transition hover:text-blue-400 duration-300">
+              <FaPlay className="text-base md:text-2xl" />
+              <p className=" text-xs md:text-xl text-gray-300 ml-2  transition hover:text-blue-400 duration-300">
                 Play Trailer
               </p>
             </div>
           </div>
 
-          <p className="mt-10 text-xl text-gray-300 font-semibold  tracking-wider">
+          <p className="mt-4 md:mt-10 text-xs md:text-xl text-gray-300 font-semibold  md:tracking-wider">
             Overview
           </p>
-          <p className="mt-5 text-2xl text-gray-300 font-semibold tracking-wider">
+          <p className="mt-2 md:mt-5 p-1 text-xs md:text-2xl text-gray-300 font-semibold md:tracking-wider">
             {overview}
           </p>
-          <div className="flex justify-between  items-center w-[115px] mt-5">
-            <FaStar className="text-4xl text-yellow-500" />
-            <p className="text-3xl"> {Math.round(vote_average)}/10</p>
+          <div className="flex md:justify-between  items-center w-[115px] mt-2 md:mt-5">
+            <FaStar className="text-lg mr-2 md:text-4xl text-yellow-500" />
+            <p className="text-lg md:text-3xl">
+              {" "}
+              {Math.round(vote_average)}/10
+            </p>
           </div>
         </div>
         {showTrailer && <MovieTrailer />}
