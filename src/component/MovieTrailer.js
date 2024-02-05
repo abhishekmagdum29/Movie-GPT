@@ -9,10 +9,8 @@ const MovieTrailer = () => {
 
   const dispatch = useDispatch();
 
-  console.log(trailerData);
-
   return (
-    <div className="w-[1125px] h-[620px] py-2 absolute -top-10 left-[15%] z-10 bg-black">
+    <div className="w-[1125px] h-[620px] py-2 absolute -top-12 left-[15%] z-10 bg-black">
       <div
         className="w-[28px] h-[28px] mx-auto  transition  hover:bg-gray-400 hover:cursor-pointer  flex items-center justify-center rounded-full duration-300"
         onClick={() => dispatch(toggleMovieTrailerComp())}

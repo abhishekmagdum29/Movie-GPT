@@ -43,7 +43,7 @@ const MovieInfoCard = ({ infoData }) => {
 
   return (
     <>
-      <div className="absolute  top-[12%]  bg-gray-950   text-white w-[100%] py-6 flex">
+      <div className="absolute  top-[13%]  bg-gray-950   text-white w-[100%] py-6 flex">
         <div className="w-[300px] h-[450px] ml-[7%] ">
           <img
             className="object-cover rounded-md"

@@ -24,8 +24,6 @@ const useNewMovieTrailer = (trailerId) => {
       (video) => video.type === "Trailer"
     );
 
-   
-
     dispatch(addNewMovieTrailer(filteredData));
   };
 
