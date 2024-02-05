@@ -11,9 +11,9 @@ const MovieInfo = () => {
   const infoData = useSelector((store) => store?.movies);
 
   return (
-    <div className="bg-[url('/assets/bg.jpg')] h-screen">
-      <div className="bg-black h-full opacity-[0.8]"></div>
-      <MovieInfoCard infoData={infoData.movieInfo} />
+    <div className="bg-[url('/assets/bg.jpg')] h-screen realtive">
+      <div className="bg-black h-full opacity-[0.8] "></div>
+      <MovieInfoCard infoData={infoData?.movieInfo} />
     </div>
   );
 };
