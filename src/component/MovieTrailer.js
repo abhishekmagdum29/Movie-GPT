@@ -10,15 +10,15 @@ const MovieTrailer = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="w-[1125px] h-[620px] py-2 absolute -top-12 left-[15%] z-10 bg-black">
+    <div className="w-screen h-72 md:w-[100%] md:h-[620px] md:py-2 absolute -top-4 md:-top-12 z-10 bg-black">
       <div
-        className="w-[28px] h-[28px] mx-auto  transition  hover:bg-gray-400 hover:cursor-pointer  flex items-center justify-center rounded-full duration-300"
+        className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] mx-auto  transition  hover:bg-gray-400 hover:cursor-pointer  flex items-center justify-center rounded-full duration-300"
         onClick={() => dispatch(toggleMovieTrailerComp())}
       >
-        <RxCross2 className="text-xl" />
+        <RxCross2 className="text-base md:text-lg" />
       </div>
       <iframe
-        className="w-full h-full "
+        className="w-full h-full md:w-[100%] md:h-full "
         src={
           "https://www.youtube.com/embed/" +
           trailerData[0]?.key +

@@ -77,9 +77,7 @@ const Login = () => {
           const user = userCredential.user;
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          setErrorMessage(errorCode + "-" + errorMessage);
+          setErrorMessage("invalid-login-credentials");
         });
     }
   };
@@ -119,11 +117,11 @@ const Login = () => {
           className="p-4 my-4 w-full bg-[#333333] outline-none rounded-md"
         />
         {errorMessage ? (
-          <p className="text-red-600 font-medium">{errorMessage}</p>
+          <p className="text-red-600 font-medium ml-1">{errorMessage}</p>
         ) : (
           <p className="text-[#a4a3a3] font-semibold text-[13px] ml-2">
-            ( password must be of 8 characters. Must include
-            uppercase, lowercase, special char & number )
+            ( password must be of 8 characters. Must include uppercase,
+            lowercase, special char & number )
           </p>
         )}
 

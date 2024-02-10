@@ -69,7 +69,7 @@ const Header = () => {
       {user && (
         <div className=" flex mt-1 md:mt-0 md:mr-10">
           <select
-            className="mr-6 px-2 py1 bg-gray-900 rounded-md text-white outline-none"
+            className="md:mr-6 w-20 h-7 text-sm md:text-base md:w-24 md:h-8 bg-gray-900 rounded-md text-white outline-none"
             onChange={handleLanguageChange}
           >
             {SUPPORTED_LANGUAGE.map((lang) => (
@@ -80,7 +80,7 @@ const Header = () => {
           </select>
 
           <button
-            className="text-white  text-sm font-medium px-[6px] py-[5px]  md:mr-7 md:px-2 md:py-1 outline-none bg-purple-700 hover:bg-purple-600 rounded-md"
+            className="text-white  text-xs md:text-sm font-medium ml-3 h-7 w-20 md:w-24 md:h-8  md:mr-7  outline-none bg-purple-700 hover:bg-purple-600 rounded-md"
             onClick={handleGptSearch}
           >
             {showGptButton ? `Home` : `GPT ${language[languageKey]?.search}`}
@@ -92,7 +92,7 @@ const Header = () => {
           />
 
           <button
-            className="ml-32 md:ml-0 font-semibold text-sm text-white hover:text-gray-300"
+            className="ml-16 text-xs md:text-sm md:ml-0 font-semibold  text-white hover:text-gray-300"
             onClick={handleSignOut}
           >
             ({language[languageKey]?.signOut})

@@ -72,7 +72,7 @@ const MovieInfoCard = ({ infoData }) => {
 
           <div className="mt-5 flex items-center">
             <p className="text-xs mr-4 md:text-xl text-gray-300  md:italic tracking-wider font-semibold">
-              {tagline.slice(0, 80)}
+              {tagline.slice(0, 85)}
             </p>
 
             <div
@@ -80,7 +80,7 @@ const MovieInfoCard = ({ infoData }) => {
               onClick={() => playMovieTrailer(id)}
             >
               <FaPlay className="text-base md:text-2xl" />
-              <p className=" text-xs md:text-xl text-gray-300 ml-2  transition hover:text-blue-400 duration-300">
+              <p className=" text-[10px] md:text-xl text-gray-300 ml-1  transition hover:text-blue-400 duration-300">
                 Play Trailer
               </p>
             </div>
