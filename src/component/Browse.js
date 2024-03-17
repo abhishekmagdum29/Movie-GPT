@@ -8,7 +8,6 @@ import useTopRatedMovies from "../utils/customHooks/useTopRatedMovies";
 import useUpcomingMovies from "../utils/customHooks/useUpcomingMovies";
 import GptSearch from "./GptSearch";
 import { useSelector } from "react-redux";
-import ShimmerUI from "./ShimmerUI";
 
 const Browse = () => {
   const showGptButton = useSelector((store) => store.gpt.showGptSearch);
