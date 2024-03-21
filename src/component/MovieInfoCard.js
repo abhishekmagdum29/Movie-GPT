@@ -3,10 +3,10 @@ import { API_OPTIONS, IMG_CDN_URL } from "../utils/constants";
 import { FaStar } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
-import { addNewMovieTrailer } from "../utils/redux/moviesSlice";
+import { addNewMovieTrailer, toggleMovieTrailerComponent} from "../utils/redux/moviesSlice";
 import MovieTrailer from "./MovieTrailer";
 import { useSelector } from "react-redux";
-import { toggleMovieTrailerComp } from "../utils/redux/moviesSlice";
+
 
 const MovieInfoCard = ({ infoData }) => {
   const showTrailer = useSelector((store) => store.movies.showMovieTrailer);
@@ -14,6 +14,7 @@ const MovieInfoCard = ({ infoData }) => {
   const dispatch = useDispatch();
 
   if (!infoData) return null;
+
   const {
     original_title,
     tagline,
@@ -37,16 +38,17 @@ const MovieInfoCard = ({ infoData }) => {
     );
 
     dispatch(addNewMovieTrailer(filteredData));
-
-    dispatch(toggleMovieTrailerComp());
+    
+    dispatch(toggleMovieTrailerComponent())
+    
   };
 
   return (
     <>
-      <div className="absolute  top-[13%]  bg-gray-950   text-white  md:w-[100%] py-6 flex">
+      <div className="absolute  top-[13%]  bg-gray-950   text-white  md:w-[92%] md:left-16 py-6 flex">
         <div className="md:w-[300px] md:h-[450px] ml-2 md:ml-[7%] w-[150px] h-[250px] ">
           <img
-            className="object-cover rounded-md"
+            className="object-cover rounded-md shadow-lg shadow-blue-700"
             src={IMG_CDN_URL + poster_path}
             alt="img"
           />
@@ -76,11 +78,11 @@ const MovieInfoCard = ({ infoData }) => {
             </p>
 
             <div
-              className=" md:ml-10 flex items-center cursor-pointer  transition hover:text-blue-400 duration-300"
+              className=" md:ml-10 flex items-center cursor-pointer  transition hover:text-blue-600 duration-300"
               onClick={() => playMovieTrailer(id)}
             >
               <FaPlay className="text-base md:text-2xl" />
-              <p className=" text-[10px] md:text-xl text-gray-300 ml-1  transition hover:text-blue-400 duration-300">
+              <p className=" text-[10px] md:text-xl text-gray-300 ml-1  ">
                 Play Trailer
               </p>
             </div>

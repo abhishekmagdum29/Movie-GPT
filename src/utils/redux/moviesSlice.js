@@ -39,7 +39,7 @@ const movieSlice = createSlice({
     addNewMovieTrailer: (state, action) => {
       state.newMovieTrailer = action.payload;
     },
-    toggleMovieTrailerComp: (state) => {
+    toggleMovieTrailerComponent: (state) => {
       state.showMovieTrailer = !state.showMovieTrailer;
     },
   },
@@ -55,5 +55,5 @@ export const {
   addMovieTrailer,
   addNewMovieTrailer,
   addMovieInfoData,
-  toggleMovieTrailerComp,
+  toggleMovieTrailerComponent
 } = movieSlice.actions;

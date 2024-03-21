@@ -6,6 +6,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
+  GoogleAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../utils/firabase";
 import { useDispatch } from "react-redux";
@@ -21,11 +23,18 @@ const Login = () => {
   let email = useRef(null);
   let password = useRef(null);
 
+  const googleProvider = new GoogleAuthProvider();
+
   const toggleSignIn = () => {
     setIsSignIn(!isSignIn);
   };
 
   const handleFormValidation = () => {
+    if (email.current.value === "" || password.current.value === "") {
+      setErrorMessage("Please enter email & password");
+      return null;
+    }
+
     let message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
 
@@ -82,6 +91,20 @@ const Login = () => {
     }
   };
 
+  const signInwithGoogle = () => {
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        // eslint-disable-next-line no-unused-vars
+        const token = credential.accessToken;
+        // eslint-disable-next-line no-unused-vars
+        const user = result.user;
+      })
+      .catch((error) => {
+        setErrorMessage("");
+      });
+  };
+
   return (
     <div className=" bg-[url('/assets/bg.jpg')] h-screen">
       <Header />
@@ -89,10 +112,10 @@ const Login = () => {
       <div className="bg-black h-full opacity-[0.5] "></div>
 
       <form
-        className="absolute -top-[40px] w-[90%] md:w-[28%] p-8 md:p-12 mx-auto my-24 md:my-32 right-0 left-0 bg-black text-white bg-opacity-[0.65] rounded-xl"
+        className="absolute -top-[40px] w-[90%] md:w-[28%] p-6 md:px-12 mx-auto my-24 md:my-32 right-0 left-0 bg-black text-white bg-opacity-[0.65] rounded-xl"
         onSubmit={(e) => e.preventDefault()}
       >
-        <h1 className="font-bold text-2xl md:text-3xl py-4">
+        <h1 className="font-bold text-2xl md:text-3xl pt-3">
           {isSignIn ? "Sign In" : "Sign Up"}
         </h1>
 
@@ -131,10 +154,17 @@ const Login = () => {
         >
           {isSignIn ? "Sign in" : "Sign Up "}
         </button>
-        <p className="py-4 cursor-pointer" onClick={toggleSignIn}>
+        <p className="my-1 cursor-pointer text-center" onClick={toggleSignIn}>
           {isSignIn
             ? "New to Netflix? Sign Up now"
             : "Already registered? Sign in now"}
+        </p>
+        <p className="text-center ">or</p>
+        <p
+          className="my-2  cursor-pointer text-center underline decoration-1 hover:text-blue-500"
+          onClick={signInwithGoogle}
+        >
+          Sign in with Google
         </p>
       </form>
     </div>

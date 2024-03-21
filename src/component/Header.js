@@ -27,12 +27,14 @@ const Header = () => {
       })
       .catch((error) => {
         // An error happened.
+        navigate("/error");
       });
   };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
+        // user is signed in
         const { uid, email, displayName, photoURL } = user;
         dispatch(
           addUser({
@@ -42,10 +44,11 @@ const Header = () => {
             photoURL: photoURL,
           })
         );
-        navigate("/browse");
+        navigate("/browse")
       } else {
+        // user is signed out
         dispatch(removeUser());
-        navigate("/");
+        navigate("/")
       }
     });
 

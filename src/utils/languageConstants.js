@@ -14,7 +14,7 @@ const language = {
   },
 
   hin: {
-    search: "खोज",
+    search: "खोजना",
     searchPlaceholderValue: "आज आप क्या देखना चाहेंगे?",
     signOut: "साइन आउट",
 
@@ -28,7 +28,7 @@ const language = {
   },
 
   mar: {
-    search: "शोध ",
+    search: "शोधणे ",
     searchPlaceholderValue: "तुम्हाला आज काय बघायला आवडेल?",
     signOut: "बाहेर पडणे",
 
