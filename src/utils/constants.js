@@ -32,7 +32,3 @@ export const SUPPORTED_LANGUAGE = [
     name: "Marathi",
   },
 ];
-
-
-
-// key="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"

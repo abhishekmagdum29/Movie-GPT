@@ -7,7 +7,6 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from "../utils/redux/userSlice";
 import { LOGO_URL } from "../utils/constants";
-import { toggleGptButton } from "../utils/redux/gptSlice";
 import { SUPPORTED_LANGUAGE } from "../utils/constants";
 import { changeLanguage } from "../utils/redux/configSlice";
 import language from "../utils/languageConstants";
@@ -17,7 +16,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const user = useSelector((store) => store.user);
-  const showGptButton = useSelector((store) => store.gpt.showGptSearch);
+  // const showGptButton = useSelector((store) => store.gpt.showGptSearch);
   const languageKey = useSelector((store) => store.config.lang);
 
   const handleSignOut = () => {
@@ -57,9 +56,7 @@ const Header = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleGptSearch = () => {
-    dispatch(toggleGptButton());
-  };
+
 
   const handleLanguageChange = (e) => {
     dispatch(changeLanguage(e.target.value));
@@ -82,12 +79,7 @@ const Header = () => {
             ))}
           </select>
 
-          <button
-            className="text-white  text-xs md:text-sm font-medium ml-3 h-7 w-20 md:w-24 md:h-8  md:mr-7  outline-none bg-purple-700 hover:bg-purple-600 rounded-md"
-            onClick={handleGptSearch}
-          >
-            {showGptButton ? `Home` : `GPT ${language[languageKey]?.search}`}
-          </button>
+        
           <img
             className="hidden md:block w-9 h-9 mr-2 "
             src={user?.photoURL}
