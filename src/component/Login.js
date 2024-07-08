@@ -10,9 +10,10 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../utils/firabase";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/redux/userSlice";
 import { profileImage_URL } from "../utils/constants";
+import language from "../utils/languageConstants";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,8 @@ const Login = () => {
   let myName = useRef(null);
   let email = useRef(null);
   let password = useRef(null);
+
+  const languageKey = useSelector((store) => store?.config?.lang);
 
   const googleProvider = new GoogleAuthProvider();
 
@@ -116,35 +119,36 @@ const Login = () => {
         onSubmit={(e) => e.preventDefault()}
       >
         <h1 className="font-bold text-2xl md:text-3xl pt-3">
-          {isSignIn ? "Sign In" : "Sign Up"}
+          {isSignIn
+            ? `${language[languageKey]?.signIn}`
+            : `${language[languageKey]?.signUp}`}
         </h1>
 
         {!isSignIn && (
           <input
             ref={myName}
             type="text"
-            placeholder="Enter name"
+            placeholder={language[languageKey]?.placeholder}
             className="p-4 my-4 w-full bg-[#333333] outline-none rounded-md"
           />
         )}
         <input
           ref={email}
           type="text"
-          placeholder="Email address"
+          placeholder={language[languageKey]?.email}
           className="p-4 my-4 w-full bg-[#333333] outline-none rounded-md"
         />
         <input
           ref={password}
           type="password"
-          placeholder="password"
+          placeholder={language[languageKey]?.password}
           className="p-4 my-4 w-full bg-[#333333] outline-none rounded-md"
         />
         {errorMessage ? (
           <p className="text-red-600 font-medium ml-1">{errorMessage}</p>
         ) : (
           <p className="text-[#a4a3a3] font-semibold text-[13px] ml-2">
-            ( password must be of 8 characters. Must include uppercase,
-            lowercase, special char & number )
+            {language[languageKey]?.description}
           </p>
         )}
 
@@ -152,19 +156,24 @@ const Login = () => {
           className="p-4 my-6 text-lg bg-red-600 cursor-pointer w-full rounded-md transition delay-150 hover:bg-red-700 duration-200"
           onClick={handleFormValidation}
         >
-          {isSignIn ? "Sign in" : "Sign Up "}
-        </button>
-        <p className="my-1 cursor-pointer text-center" onClick={toggleSignIn}>
           {isSignIn
-            ? "New to Netflix? Sign Up now"
-            : "Already registered? Sign in now"}
+            ? `${language[languageKey]?.signIn}`
+            : `${language[languageKey]?.signUp}`}
+        </button>
+        <p
+          className="my-1 cursor-pointer text-center hover:underline"
+          onClick={toggleSignIn}
+        >
+          {isSignIn
+            ? `${language[languageKey]?.footNote1}`
+            : `${language[languageKey]?.footNote2}`}
         </p>
-        <p className="text-center ">or</p>
+        <p className="text-center ">{language[languageKey]?.or}</p>
         <p
           className="my-2  cursor-pointer text-center underline decoration-1 hover:text-blue-500"
           onClick={signInwithGoogle}
         >
-          Sign in with Google
+          {language[languageKey]?.signWithGoogle}
         </p>
       </form>
     </div>
